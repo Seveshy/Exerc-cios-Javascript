@@ -1,5 +1,6 @@
 /*
     JS - Aula 04: Função Simples
+    @author: Daniel Major
 */
 
 function hello (){
