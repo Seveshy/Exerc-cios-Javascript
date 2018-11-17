@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- O objeto date serve para construir objetos do tipo data.
+        getDay(), getFullYear(), getHours(), getMilliseconds(), getMinutes(), 
+        getMounth(), getSeconds(), getTime(), setDate(), setDay()
+    O objeto do tipo date sempre deve ser instanciado, então devemos usar new. 
+
+        PROBLEMA
+            Fazer uma página que mostra quantos dias faltam para o seu próximo aniversário 
+            ou mostrar mensagem de parabéns. -->
+    <script>
+        (function(){
+            var dataAtual = new Date();
+            dataAtual.setHours(0);
+            dataAtual.setMinutes(0);
+            dataAtual.setSeconds(0);
+            var anAtual = dataAtual.getFullYear();
+            var dataAtualTS = dataATual.getTime();
+            
+            var dataNiver = new Date(anoAtaual, 3, 23);
+            var  dataNiver = dataNiver.getTime();
+            
+
+                if(dataNiverTS == dataAtualTS){
+                    alert('Parabens pelo seu aniversario');
+                    return;
+                }
+
+                if(dataNiver < dataAtualTS){
+                    dataNiver.setFullYear(++anoAtaual);
+                    dataNiverTS = dataNiver.getTime();
+                }
+
+                const UM_DIA_TS = 24 * 60 *60 * 1000;
+                var diferenca = dataNiverTS - dataAtualTS; 
+                console.log(diferenca / UM_DIA_TS)
+                
+        })
+    </script>
+
+</body>
+</html>
