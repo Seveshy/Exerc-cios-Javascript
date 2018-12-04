@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        article:nth-child(1) a {
+            color: red;
+        } 
+
+        article:nth-child(3) > p {
+            color: red;
+        } 
+
+        article:nth-child(5) h3 + p {
+            margin-top: 50px;
+        }        
+
+        article:nth-child(7) h3 ~ p {
+           color: orange;
+        } 
+
+        /* Aplicando color yellow em todo article, menos na classe destaque, por causa da tag not*/
+
+        article:not(.destaque){
+            color: orange;
+        }
+
+        .destaque {
+            background: yellow;
+        }
+
+        a[href="#"]{
+            opacity: .2;
+        }
+
+        a[href^="http"]{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <article>
+        <h3>Titulo</h3>
+
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+
+    </article>
+        
+        <hr>
+    <article>
+        <h3>Titulo</h3>
+
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+    </article>
+        </hr>
+
+        <hr>
+    <article class="destaque">
+        <h3>Titulo</h3>
+
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+        <p>paragrafo <a href="#">apenas um link <b>negrito</b></a></p>
+    </article>
+
+        <ul>
+            <li><a href="#">link falso</a> </li>
+            <li><a href="#">link falso</a> </li>
+            <li><a href="http://serfrontend.com" target="_blank">link externo</a> </li>
+            <li><a href="/impar-par.html">link interno</a> </li>
+        </ul>
+        </hr>
+</body>
+</html>
