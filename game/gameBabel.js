@@ -93,15 +93,40 @@ heroImage.onload = function(){
     const render = function(){
         if (bgReady)
             ctx.drawImage(bgImage, 0, 0);
-    }
-    if (heroReady){
-        ctx.drawImage(monsterImage, hero.x, hero.y);
-    }
-    if(monsterReady){
-        ctx.drawImage(heroImage, hero.x, hero.y);
-    }
-    if(monsterReady){
-        ctx.drawImage(monsterImage, monster.x, monster.y);
-    }
-    ctx.fillStyle = 'rgb(250, 250, 250)';
-    ctx.font = '24px Helvetica';
+   
+            if (heroReady){
+                ctx.drawImage(monsterImage, hero.x, hero.y);
+            }
+            if(monsterReady){
+                ctx.drawImage(heroImage, hero.x, hero.y);
+            }
+            if(monsterReady){
+                ctx.drawImage(monsterImage, monster.x, monster.y);
+            }
+            ctx.fillStyle = 'rgb(250, 250, 250)';
+            ctx.font = '24px Helvetica';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'top';
+            ctx.fillText('Monstros pegos: ' + monstersCaught, 32, 32);
+    };
+
+    //Controla o loop do jogo
+        const main = function (){
+            const now = Date.now(); //32000
+            const delta = now - then; //2000
+
+                update(delta / 1000); //2000 / 1000 = 2
+                render();
+
+                then = now; //32000
+
+                //Executa isso o mais breve possivel
+                requestAnimationFrame(main);
+        };
+        const w = window;
+        const requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame; 
+        
+        let then = Date.now(); //30000
+        reset();
+        main();
+    
